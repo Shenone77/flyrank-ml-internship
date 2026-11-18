@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A time-based FlyRank warehouse study of a ten-slot editorial review queue for material Google Search impression declines.">
+<title>Catching material search declines with ten reviews per client</title>
+<style>
+:root{--bg:#f6f4eb;--paper:#fffdf7;--ink:#172724;--muted:#475d56;--line:#c9d4c9;--green:#126458;--rust:#955132;--tint:#e5eee7}
+*{box-sizing:border-box}html{color-scheme:light;scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Instrument Sans",system-ui,sans-serif}a{color:var(--green);text-underline-offset:3px}a:focus-visible{outline:2px solid var(--green);outline-offset:4px}.wrap{width:min(1080px,calc(100% - 48px));margin:auto}.mast{border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 0;font-size:.92rem}.mast a{font-weight:650}.hero{padding:66px 0 54px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:end}.meta{letter-spacing:.1em;text-transform:uppercase;color:var(--green);font-size:.8rem;font-weight:730}h1,h2{font-family:"STIX Two Text",Georgia,serif;font-weight:500;letter-spacing:-.024em;line-height:1.08}h1{font-size:clamp(2.65rem,6.8vw,5.25rem);margin:.22em 0}.deck{max-width:58ch;font-size:1.12rem;color:var(--muted);margin:.65rem 0 0}.hero-result{border-left:4px solid var(--green);padding:12px 0 12px 22px}.hero-numbers{display:flex;flex-wrap:wrap;gap:6px 22px;margin:5px 0;align-items:baseline}.hero-numbers strong{font:500 clamp(2.1rem,5vw,3.5rem)/1 "STIX Two Text",Georgia,serif}.hero-numbers .first{color:var(--green)}.hero-numbers .second{color:var(--rust)}.hero-result p{margin:0;color:var(--muted);font-size:.93rem}.reading{display:grid;grid-template-columns:165px minmax(0,1fr);gap:42px;border-top:1px solid var(--line);padding:28px 0 60px}.toc{position:sticky;top:23px;align-self:start;display:grid;gap:6px}.toc a{width:fit-content;font-size:.9rem}.paper{background:var(--paper);padding:clamp(23px,5vw,56px);border:1px solid var(--line);border-radius:7px;min-width:0}.paper section+section{border-top:1px solid var(--line);margin-top:28px;padding-top:24px}.paper section{scroll-margin-top:25px}.paper h2{font-size:clamp(1.85rem,3.5vw,2.65rem);margin:0 0 .46em}.paper p{margin:.65em 0 1em}.paper p:last-child{margin-bottom:0}.table-scroll{overflow:auto;margin:1rem 0}table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;line-height:1.4;font-size:.91rem}th,td{padding:.66em .65em;text-align:left;border-bottom:1px solid var(--line);white-space:normal}thead th{background:var(--tint);vertical-align:bottom}tbody th{font-weight:650}.axis{margin-left:99px;margin-right:calc(3.7rem + 9px);display:flex;justify-content:space-between;color:var(--muted);font-variant-numeric:tabular-nums;font-size:.73rem}.figure{background:var(--bg);padding:16px 20px;border-radius:6px;margin:1.1rem 0}.figure h3{margin:0 0 .6em;font-size:1rem}.metric+.metric{margin-top:18px}.metric-name{margin:0 0 5px;font-size:.92rem}.barrow{display:grid;grid-template-columns:90px minmax(0,1fr) 3.7rem;gap:9px;align-items:center;margin:4px 0;font-size:.8rem;font-variant-numeric:tabular-nums}.track{height:12px;background:#dae3d8}.fill{height:100%;background:var(--rust);width:var(--p)}.fill.model{background:var(--green)}figcaption{margin-top:12px;color:var(--muted);font-size:.87rem}.callout{padding:13px 16px;background:var(--tint);border-left:3px solid var(--green);margin:1em 0}.paper li+li{margin-top:.68em}.paper ol{padding-left:1.3em}.paper pre{font: .9rem/1.5 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--tint);padding:12px 15px;border-radius:4px}.paper code{overflow-wrap:anywhere}footer{padding:0 0 34px;color:var(--muted);font-size:.84rem}
+@media(max-width:760px){.wrap{width:min(100% - 30px,1080px)}.hero{grid-template-columns:1fr;gap:22px;padding:38px 0 28px}.reading{display:block;padding-top:14px}.toc{position:static;display:flex;flex-wrap:wrap;gap:5px 15px;margin-bottom:16px}.paper{padding:20px}.mast{align-items:flex-start}.figure{padding:14px 12px}.axis{margin-left:79px;margin-right:calc(3.2rem + 6px)}.barrow{grid-template-columns:73px minmax(0,1fr) 3.2rem;gap:6px}}
+</style>
+</head>
+<body>
+<header class="mast wrap"><span>FlyRank ML Internship · Research paper</span><a href="https://github.com/Shenone77/flyrank-ml-internship">Project repository</a></header>
+<main class="wrap">
+<div class="hero">
+  <div><div class="meta">Search intelligence · 18 November 2026</div><h1>Catching material search declines with ten reviews per client</h1><p class="deck">A time-based test of which pages to send to an editor first, using two months of observed outcomes from FlyRank’s search warehouse.</p><p>Shenone77 · Refresh / Content Opportunity Scoring</p></div>
+  <aside class="hero-result" aria-label="Headline result"><span class="meta">June holdout · Precision@10 per client</span><div class="hero-numbers"><strong class="first">68.1%</strong><strong class="second">32.2%</strong></div><p>Logistic ranking and the exposure rule, respectively. Averaged equally across 32 clients.</p></aside>
+</div>
+<div class="reading">
+<nav class="toc" aria-label="Paper sections"><a href="#abstract">Abstract</a><a href="#problem">Problem</a><a href="#data">Data</a><a href="#method">Methodology</a><a href="#results">Results</a><a href="#limitations">Limitations</a><a href="#recommendations">Ranked actions</a><a href="#reproduce">Reproducibility</a><a href="#credit">Data credit</a></nav>
+<article class="paper">
+<section id="abstract">
+<h2>Abstract</h2>
+<p>When a content editor can review ten pages per client, which pages should enter the queue first? I used two pre-decision feature windows and their observed 30-day outcomes from FlyRank’s pseudonymized search warehouse. I trained a small logistic ranker on April outcomes and compared it with a fixed exposure rule on June outcomes. Across 32 clients, mean Precision@10 was 68.1% for logistic ranking and 32.2% for the exposure rule. The findings support a human-review pilot with a fixed client budget and a separate check for unusually large visibility losses.</p>
+</section>
+<section id="problem">
+<h2>The editorial decision</h2>
+<p>An editor has ten checks for each client and wants to identify pages at risk of losing meaningful search visibility. A page enters the candidate set only if it had at least 300 impressions in the prior 30 days. The output is a ranked list with a reason code and a practical first check. A false alarm takes a review slot, while a missed drop delays investigation.</p>
+</section>
+<section id="data">
+<h2>Data and coverage</h2>
+<p>I used FlyRank’s <a href="https://huggingface.co/datasets/FlyRank/internship-warehouse">v20260703 warehouse release</a>. I aggregated the daily performance fact to one page per client per cutoff, joined the client dimension for tracking start, and joined the content dimension for creation date. A candidate needed tracking before or at the start of the 30-day feature window, 30 observed GSC days, a known creation date, and at least 300 impressions.</p>
+<div class="table-scroll"><table aria-label="Warehouse feature and outcome windows"><thead><tr><th scope="col">Role</th><th scope="col">Features</th><th scope="col">Outcomes</th><th scope="col">Eligible pages</th><th scope="col">Observable outcomes</th></tr></thead><tbody><tr><th scope="row">Training</th><td>Mar 2–31</td><td>Apr 1–30</td><td>54,459</td><td>47,770</td></tr><tr><th scope="row">Holdout</th><td>May 2–31</td><td>Jun 1–30</td><td>65,176</td><td>54,692</td></tr></tbody></table></div>
+<p>All dates are in 2026. Pages with fewer than 30 valid follow-up days have unresolved outcomes. They stay in the operational queue and are outside the retrospective metric calculation. Analytics data and private content or query fields were outside the analysis.</p>
+</section>
+<section id="method">
+<h2>Methodology</h2>
+<p><strong>Outcome.</strong> A material drop requires both at least 150 fewer impressions and at least 30% fewer impressions in the following 30 days. The preceding 30 days supply the comparison level. The thresholds define which observed losses matter for this editorial policy.</p>
+<p><strong>Comparator and model.</strong> The exposure rule ranks by prior impressions and applies a 25% boost when prior CTR is at most 0.5%. Logistic regression learns from log prior impressions, prior CTR, age at the cutoff, the number of prior days with impressions, and the share of prior impressions in the last 15 days. Scaling and model fitting used only the training set. Both methods score the same June rows.</p>
+<p><strong>Validation.</strong> I checked the page-day grain and required GSC availability to be true. Features end before the outcome window begins. Pseudonymous IDs serve joins and client-level grouping. Recent update fields and post-cutoff measurements stay outside the feature frame. Mean Precision@10 gives equal weight to each client with at least ten observable candidates. The pooled top 50 is a secondary view. Exact score ties use the same seed-based ordering.</p>
+</section>
+<section id="results">
+<h2>More useful picks per client</h2>
+<p>Logistic ranking found 218 material drops in 320 review slots. The rule found 103. The mean difference was <strong>35.9 percentage points</strong>, with a paired client-bootstrap interval of <strong>28.4 to 43.8 points</strong> in this holdout. Logistic ranking improved 29 client queues and tied three. Random selection had an expected mean precision of 34.7% under the same client allocation.</p>
+<figure class="figure" aria-label="Precision comparisons for the client-balanced and pooled review queues">
+<h3>Precision at two review budgets</h3>
+<div class="axis" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></div>
+<div class="metric"><h4 class="metric-name">Ten slots per client</h4>
+<div class="barrow"><span>Exposure rule</span><div class="track" aria-hidden="true"><div class="fill" style="--p:32.1875%"></div></div><strong>32.2%</strong></div>
+<div class="barrow"><span>Logistic</span><div class="track" aria-hidden="true"><div class="fill model" style="--p:68.125%"></div></div><strong>68.1%</strong></div></div>
+<div class="metric"><h4 class="metric-name">Pooled top 50</h4>
+<div class="barrow"><span>Exposure rule</span><div class="track" aria-hidden="true"><div class="fill" style="--p:44%"></div></div><strong>44.0%</strong></div>
+<div class="barrow"><span>Logistic</span><div class="track" aria-hidden="true"><div class="fill model" style="--p:96%"></div></div><strong>96.0%</strong></div></div>
+<figcaption>Each bar uses a zero-to-100% scale. The pooled random-selection expectation was 51.6%. The client-balanced expectation was 34.7%.</figcaption>
+</figure>
+<div class="callout"><strong>Precision and lost impressions tell different stories.</strong> The pooled rule surfaced 22 confirmed drops representing 2.03 million lost impressions. The logistic queue surfaced 48 drops representing 0.63 million. The rule concentrated more of its effort on unusually high-exposure pages. These are measured losses associated with the selected pages.</div>
+<p>Lower late-window impression share had the largest standardized coefficient in magnitude. Prior active days had a zero fitted coefficient. The date-based result applies to the observed June window. The holdout may contain clients seen in training.</p>
+</section>
+<section id="limitations">
+<h2>Limitations and honest framing</h2>
+<p>In June, 10,484 eligible pages, about 16.1%, lacked a complete follow-up. If missingness is associated with removal or lost tracking, precision among observable pages may differ from the live queue. The outcome rate rose from 37.2% in training to 51.6% among observable June pages, and the client mix also changed. A single time holdout provides directional evidence. The paired interval reflects variation across clients in that window.</p>
+<p>A drop can reflect demand, ranking, indexing, a migration, or measurement. The study measures which pages were surfaced under a fixed definition. A refresh experiment would be needed to measure recovery.</p>
+</section>
+<section id="recommendations">
+<h2>Ranked review actions</h2>
+<ol>
+<li><strong>Review fading visibility first.</strong> For high-ranked pages whose final 15 days account for under 35% of prior impressions, check indexing, seasonality, and demand before choosing an intervention.</li>
+<li><strong>Check low-CTR pages.</strong> Inspect query mix, search-result presentation, and snippet fit. Confirm that the impressions came from a market and intent worth serving.</li>
+<li><strong>Review remaining high-ranked pages.</strong> Keep the queue at ten per client. Flag an unusually high-exposure page for manual comparison within that budget, especially when the two rankings disagree.</li>
+<li><strong>Monitor the rest.</strong> Log findings and review time. Recheck Precision@10 versus the rule after each labeled window and revisit the model if it trails the rule for two windows.</li>
+</ol>
+</section>
+<section id="reproduce">
+<h2>Reproducibility</h2>
+<p>Use an approved Hugging Face read credential for the warehouse. After installing the repo requirements, run the capstone notebook or use the commands below. The run records the warehouse revision, fixed dates, seed 42, and library versions. The local queue carries review codes and stays out of Git.</p>
+<pre><code>python -m pip install -r requirements.txt
+python work/notebooks/capstone_analysis.py</code></pre>
+<p><a href="https://github.com/Shenone77/flyrank-ml-internship/blob/main/work/notebooks/capstone.ipynb">Executed capstone notebook</a> · <a href="https://github.com/Shenone77/flyrank-ml-internship/blob/main/work/outputs/capstone_metrics.json">Aggregate metrics</a> · <a href="https://github.com/Shenone77/flyrank-ml-internship">Source repository</a></p>
+</section>
+<section id="credit">
+<h2>Acknowledgments &amp; data credit</h2>
+<p><a href="https://flyrank.ai">Built on the FlyRank ML Internship dataset</a>.</p>
+</section>
+</article>
+</div>
+</main>
+<footer class="wrap">Search intelligence research · Shenone77</footer>
+</body>
+</html>
