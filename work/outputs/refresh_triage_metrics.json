@@ -1,0 +1,32 @@
+{
+  "seed": 42,
+  "review_budget": 50,
+  "training_pages": 12442,
+  "training_clients": 21,
+  "holdout_pages": 970,
+  "holdout_clients": 7,
+  "holdout_base_rate": 0.8525773195876288,
+  "features": [
+    "log_prior_impressions",
+    "prior_ctr_pct",
+    "age_at_cutoff_days"
+  ],
+  "metrics": {
+    "Frozen exposure rule": {
+      "precision_at_20": 0.85,
+      "precision_at_50": 0.84,
+      "average_precision": 0.8814321896454953,
+      "clients_in_top_50": 2
+    },
+    "Logistic regression": {
+      "precision_at_20": 0.95,
+      "precision_at_50": 0.96,
+      "average_precision": 0.9317602917613567,
+      "clients_in_top_50": 3
+    }
+  },
+  "versions": {
+    "pandas": "3.1.1",
+    "scikit_learn": "1.9.1"
+  }
+}
