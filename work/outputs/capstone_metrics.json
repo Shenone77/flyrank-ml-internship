@@ -1,0 +1,72 @@
+{
+  "warehouse_revision": "50cbf7c3909d07be4d1b5906b4d09e882e5acbf2",
+  "seed": 42,
+  "cutoffs": {
+    "train": "2026-04-01",
+    "test": "2026-06-01"
+  },
+  "train": {
+    "eligible_pages": 54459,
+    "observed_outcomes": 47770,
+    "unresolved_outcomes": 6689,
+    "clients_with_observed_outcomes": 30,
+    "material_drops": 17761,
+    "base_rate": 0.371802386435001
+  },
+  "holdout": {
+    "eligible_pages": 65176,
+    "observed_outcomes": 54692,
+    "unresolved_outcomes": 10484,
+    "clients_with_observed_outcomes": 37,
+    "material_drops": 28198,
+    "base_rate": 0.5155781467124991
+  },
+  "evaluation": {
+    "clients_at_k10": 32,
+    "macro_random_precision_at_10": 0.3474607932502852,
+    "better_clients": 29,
+    "tied_clients": 3,
+    "worse_clients": 0,
+    "macro_delta": 0.359375,
+    "macro_delta_client_bootstrap_95": [
+      0.28437500000000004,
+      0.4375
+    ]
+  },
+  "methods": {
+    "Exposure rule": {
+      "precision_at_50": 0.44,
+      "drops_at_50": 22,
+      "clients_at_50": 10,
+      "lost_impressions_among_hits_at_50": 2034384,
+      "average_precision": 0.5410791145505447,
+      "macro_precision_at_10": 0.321875
+    },
+    "Logistic ranking": {
+      "precision_at_50": 0.96,
+      "drops_at_50": 48,
+      "clients_at_50": 15,
+      "lost_impressions_among_hits_at_50": 634396,
+      "average_precision": 0.6854438828368569,
+      "macro_precision_at_10": 0.68125
+    }
+  },
+  "standardized_coefficients": {
+    "log_prior_impressions": 0.07936795053608481,
+    "prior_ctr_pct": -0.39830971704637513,
+    "age_at_cutoff_days": -0.012977337039838088,
+    "prior_active_days": 0.0,
+    "prior_late_share": -0.6371832533549503
+  },
+  "versions": {
+    "duckdb": "2.0.0",
+    "pandas": "3.1.1",
+    "scikit_learn": "1.9.1"
+  },
+  "recommended_queue_score": "model_score",
+  "review_queue_reasons": {
+    "PRIOR_EXPOSURE_FADING": 275,
+    "LOW_PRIOR_CTR": 72,
+    "EXPOSURE_AT_STAKE": 21
+  }
+}
